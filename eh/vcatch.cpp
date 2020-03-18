@@ -2,6 +2,9 @@
 // Licensed under the MIT license. See LICENSE file in the project root for
 // full license information.
 
+// RUN: %cxx -Z7 -EHsc -O2 %s -Fe%t.exe
+// RUN: %t.exe
+
 // Write to volatiles in the catch to try and verify that we have
 // a correct catch frame prolog and epilog.
 

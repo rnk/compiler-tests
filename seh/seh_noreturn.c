@@ -2,6 +2,9 @@
 // Licensed under the MIT license. See LICENSE file in the project root for
 // full license information.
 
+// seh_noreturn.c is a compile only test.
+// RUN: %cxx -c -Z7 -EHsc -O2 %s -Fo%t.obj
+
 // SEH + no-return (explicit)
 
 __declspec(noreturn) int bar(int);

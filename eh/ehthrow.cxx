@@ -2,6 +2,11 @@
 // Licensed under the MIT license. See LICENSE file in the project root for
 // full license information.
 
+// RUN: %cxx -Z7 -EHsc -O2 %s -Fe%t.exe
+// RUN: %t.exe > %t.out
+// FIXME: Assumes x64. Should generalize.
+// RUN: diff -u --strip-trailing-cr %t.out %S/ehthrow.amd64
+
 /*        
      Tests some throw and rethrow situations (mostly CRT a test)              
 */

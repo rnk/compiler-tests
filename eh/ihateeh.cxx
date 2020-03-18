@@ -2,6 +2,11 @@
 // Licensed under the MIT license. See LICENSE file in the project root for
 // full license information.
 
+// RUN: %cxx -Z7 -EHsc -Od %s -Fe%t.exe
+// RUN: %t.exe
+// FIXME: Test crashes with buffer overrun today. Not stack overflow...
+// XFAIL: *
+
 #include <stdlib.h>
 #include <stdio.h>
 

@@ -2,6 +2,10 @@
 // Licensed under the MIT license. See LICENSE file in the project root for
 // full license information.
 
+// RUN: %cxx -Z7 -EHsc -O2 %s -Fe%t.exe
+// RUN: %t.exe > %t.out
+// RUN: diff -u --strip-trailing-cr %t.out %S/recursive_throw.out
+
 #include <stdio.h>
 #include <windows.h>
 #ifdef _M_CEE

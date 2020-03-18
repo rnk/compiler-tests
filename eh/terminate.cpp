@@ -2,6 +2,10 @@
 // Licensed under the MIT license. See LICENSE file in the project root for
 // full license information.
 
+// RUN: %cxx -Z7 -EHsc -O2 %s -Fe%t.exe
+// RUN: %t.exe > %t.out
+// RUN: diff -u --strip-trailing-cr %t.out %S/terminate.out
+
 /*
 ** The first call to Test checks to make sure that we don't call terminate
 ** when an SEH fault is triggered. After catching the SEH fault, we then

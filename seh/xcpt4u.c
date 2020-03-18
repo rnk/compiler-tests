@@ -2,6 +2,12 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full
 // license information.
 
+// FIXME: Fails to compile with newer Windows SDK.
+// XFAIL: *
+// RUN: %cxx -Z7 -EHsc -O2 %s -Fe%t.exe
+// RUN: %t.exe > %t.out
+// RUN: diff -u --strip-trailing-cr %t.out %S/xcpt4u.correct
+
 /*
  *	COMMAND LINE: -Ox -Gz -YX -UPROTOTYPES_REQUIRED
  */

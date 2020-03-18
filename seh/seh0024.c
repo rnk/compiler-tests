@@ -2,6 +2,9 @@
 // Licensed under the MIT license. See LICENSE file in the project root for
 // full license information.
 
+// RUN: %cxx -Z7 -EHsc -O2 %s -Fe%t.exe
+// RUN: %t.exe
+
 #include <windows.h>
 
 #if defined(_M_MRX000) || defined(_M_PPC) || defined(_ALPHA)

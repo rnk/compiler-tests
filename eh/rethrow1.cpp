@@ -2,6 +2,10 @@
 // Licensed under the MIT license. See LICENSE file in the project root for
 // full license information.
 
+// RUN: %cxx -Z7 -EHsc -O2 %s -Fe%t.exe
+// RUN: %t.exe > %t.out
+// RUN: diff -u --strip-trailing-cr %t.out %S/rethrow1.out
+
 #include <stdio.h> 
 int c, d; 
 struct A
